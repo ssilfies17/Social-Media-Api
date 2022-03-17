@@ -1,0 +1,26 @@
+{
+  "name": "social-media-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssilfies17/Social-Media-Api.git"
+  },
+  "author": "Sawyer Silfies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssilfies17/Social-Media-Api/issues"
+  },
+  "homepage": "https://github.com/ssilfies17/Social-Media-Api#readme"
+}
