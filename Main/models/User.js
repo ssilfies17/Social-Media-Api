@@ -1,0 +1,42 @@
+const { Schema, model } = require('mongoose');
+
+const userSchema = new Schema(
+    {
+      username: {
+        type: String,
+        unique: true,
+        required: true,
+        trim: true,
+      },
+      email: {
+        type: String,
+        required: true,
+        unique: true,
+        maxlength: 50,
+        minlength: 4,
+      },
+      thoughts: [
+        {
+            _id: Schema.Types.ObjectId,
+            ref: 'Thought',
+        },
+      ],
+      friends: [
+        {
+            _id: Schema.Types.ObjectId,
+            ref: 'User',
+        },
+      ],
+    },
+    {
+      toJSON: {
+        getters: true,
+        virtuals: true,
+      },
+      id: false,
+    }
+);
+  
+const User = model('user', userSchema);
+
+module.exports = userSchema;
