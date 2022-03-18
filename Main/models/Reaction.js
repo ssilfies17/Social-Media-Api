@@ -28,7 +28,7 @@ const reactionSchema = new Schema(
     }
 );
 
-reactionSchema.virtual('createdAt')
+reactionSchema.virtual('created')
     .get(function () {
         return this.createdAt.default;
 });
