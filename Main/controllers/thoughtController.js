@@ -21,17 +21,23 @@ module.exports = {
 
     createThought(req, res) {
         Thought.create(req.body)
-        User.findOneAndUpdate(
-            {username: req.params.username},
-            {$addToSet: {thoughts: req.body}},
-            {runValidators: true, new: true}
-        )
-            .then((user) =>
-                !user
-                    ? res.status(404).json({ message: 'No user found with that Username'})
-                    : res.json({ message: 'User successfully updated!'})
-            )
-            .catch((err) => res.status(500).json(err));
+            .then((thought) =>
+                !thought
+                    ? res.status(404).json({ message: 'Something went wrong'})
+                    : User.findOneAndUpdate(
+                        {username: req.params.username},
+                        {$addToSet: {thoughts: req.body}},
+                        {runValidators: true, new: true}
+                    )
+                    .then((thought) =>
+                        !thought
+                            ? res.status(404).json({ message: 'No user found with that Username'})
+                            : res.json({ message: 'User successfully updated!'})
+                    )
+                    .catch((err) => res.status(500).json(err))
+                );
+        
+        
     },
 
     updateThought(req, res) {
