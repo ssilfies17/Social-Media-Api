@@ -31,26 +31,19 @@ npm i
 3. In terminal run the following command:
 
     ```bash
-    npm run seed
-    ```
-
-
-4. In terminal run the following command:
-
-    ```bash
     node index.js
     ```
 
-5. If the following message appears 
+4. If the following message appears 
 
     ```bash
     API server running on port 3001!
     ```
 Congratualtions! Your node server is running.
 
-6. Open your favorite API communicator, such as Insomnia.
+5. Open your favorite API communicator, such as Insomnia.
 
-7. Follow along with the routes and various CRUD functions found in `Routes` folder.
+6. Follow along with the routes and various CRUD functions found in `Routes` folder.
 
 ## Credits
 
